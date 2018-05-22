@@ -1,4 +1,4 @@
-package kirupa.com.credit;
+package kirupa.com.credit.models;
 
 /**
  * Created by kirupa on 9/4/18.

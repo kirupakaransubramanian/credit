@@ -2,9 +2,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimaryDark"
+    android:background="@color/colorPrimary"
     android:padding="20dp"
-    tools:context="kirupa.com.credit.HomeActivity">
+    tools:context="kirupa.com.credit.activities.HomeActivity">
 
 
     <RelativeLayout
@@ -106,6 +106,17 @@
         android:layout_below="@+id/humidity_field"
         android:layout_centerHorizontal="true"
         android:textColor="#FFFFFF"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        />
+
+    <TextView
+        android:id="@+id/txt_forecast"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/humidity_field"
+        android:layout_centerHorizontal="true"
+        android:textColor="#FFFFFF"
+        android:text="Forecast"
         android:textAppearance="?android:attr/textAppearanceMedium"
         />
 

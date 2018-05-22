@@ -1,7 +1,8 @@
-package kirupa.com.credit;
+package kirupa.com.credit.activities;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Typeface;
 import android.location.Address;
@@ -29,9 +30,13 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import kirupa.com.credit.R;
+import kirupa.com.credit.models.Function;
+
 public class HomeActivity extends AppCompatActivity implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, LocationListener {
 
-    TextView cityField, detailsField, currentTemperatureField, humidity_field, pressure_field, weatherIcon, updatedField;
+    TextView cityField, detailsField, currentTemperatureField, humidity_field,
+            pressure_field, weatherIcon, updatedField,forecast;
 
     Typeface weatherFont;
 
@@ -66,7 +71,16 @@ public class HomeActivity extends AppCompatActivity implements GoogleApiClient.C
         humidity_field = (TextView) findViewById(R.id.humidity_field);
         pressure_field = (TextView) findViewById(R.id.pressure_field);
         weatherIcon = (TextView) findViewById(R.id.weather_icon);
+        forecast = (TextView) findViewById(R.id.txt_forecast);
         weatherIcon.setTypeface(weatherFont);
+
+        forecast.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HomeActivity.this, HomeActivity.class));
+                finish();
+            }
+        });
 
         spCityName=(Spinner)findViewById(R.id.spCityName);
 
